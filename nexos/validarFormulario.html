@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Unidad 7 JavaScript</h1>
+    <h2>Validar con Js</h2>
+    <form action="" onsubmit="return validarFormulario()">
+        <label for="nombre">
+        <span>Nombre</span>
+      </label>
+        <input id="nombre" name="nombre" type="text" />
+        <br /><br />
+        <label for="edad">
+        <span>Edad</span>
+      </label>
+        <input id="edad" name="edad" type="text" />
+        <br /><br />
+        <label for="correo">
+        <span>Correo electrónico</span>
+      </label>
+        <input type="text" id="correo" name="correo" />
+        <label for="fecha">
+        <span>Fecha</span>
+      </label>
+        <input type="date" id="fecha" name="fecha" />
+        <br /><br />
+        <label for="selector">
+        <span>Curso a estudiar, selecciona una opción:</span>
+      </label>
+        <select name="selector" id="selector">
+        <option value="">Valor por defecto</option>
+        <option value="1">Experto en programación java</option>
+        <option value="2">Experto en programación visual basic net</option>
+        <option value="3">Experto en programación Web con PHP</option>
+      </select>
+        <br /><br />
+        <label for="radioButton">
+        <span>Selecciona una opción:</span>
+      </label>
+        <input type="radio" id="radioButton" name="radioButton" />Experto en programación java<br />
+        <input type="radio" id="radioButton" name="radioButton" />Experto en programación visual basic net<br />
+        <input type="radio" id="radioButton" name="radioButton" />Experto en programación Web con PHP<br /><br />
+        <input type="submit" value="Submit" />
+    </form>
+    <script src="js/validar.js"></script>
+</body>
+
+</html>

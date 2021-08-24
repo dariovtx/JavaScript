@@ -1,0 +1,146 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+height: 100vh;
+background: rgb(57, 99, 83);
+}
+
+.contenedor{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ubicar{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    
+}
+
+#actual-valor {
+    width: 100%;
+    height: 50%;
+    text-align: right;
+    font-size: 26px;
+    padding-top: 15px;
+    padding-right: 10px;
+}
+#anterior-valor{
+    width: 100%;
+    height: 30%;
+    text-align: right;
+    font-size: 22px;
+    color: gray;
+    padding-top: 15px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    
+}
+#pantalla {
+    max-width: 27rem;
+    max-height: 35rem;
+    text-align: center;
+    background-color: #dfdfdf;
+    border-radius: 4px;
+    grid-area: pantalla;
+}
+.calculadora {
+    width: 27rem;
+    height: 25rem;
+    padding: 10px;
+    background-color: rgba(1, 62, 177, 0.6);
+    border-radius: 8px;
+    border: 4px solid rgba(7, 7, 7, 0.6);
+    box-shadow: 4px 4px 4px rgba(12, 4, 92, 0.6);
+    display: grid;
+grid-template-areas: "pantalla          pantalla        pantalla        pantalla"
+                     "btn-7             btn-8           btn-9           btn-multiplica"
+                     "btn-4             btn-5           btn-6           btn-resta"
+                     "btn-1             btn-2           btn-3           btn-suma"
+                     "btn-c             btn-0           btn-igual       btn-divide"
+                     ;
+
+grid-gap: 10px;
+}
+.btn-concatenarAnterior:hover{
+    background-color: rgb(4, 0, 226);
+}
+.btn-num:hover{
+    background-color: rgb(117, 0, 226);
+}
+
+.btn {
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: linear 0.1s;
+    background-color: #c5c5c5;
+    box-shadow:  5px 4px 3px rgba(0, 0, 0, 0.7);
+}
+#btn-multiplica{
+    grid-area:btn-multiplica;
+}
+#btn-resta{
+    grid-area:btn-resta;
+}
+#btn-igual{
+    grid-area:btn-igual;
+}
+#btn-divide{
+    grid-area:btn-divide;
+}
+#btn-c{
+    grid-area:btn-c;
+}
+#btn-9 {
+    grid-area: btn-9;
+}
+
+#btn-8 {
+    grid-area: btn-8;
+}
+
+#btn-7 {
+    grid-area: btn-7;
+}
+
+#btn-6 {
+    grid-area: btn-6;
+}
+
+#btn-5 {
+    grid-area: btn-5;
+}
+
+#btn-4 {
+    grid-area: btn-4;
+}
+
+#btn-3 {
+    grid-area: btn-3;
+}
+
+#btn-2 {
+    grid-area: btn-2;
+}
+
+#btn-1 {
+    grid-area: btn-1;
+}
+
+#btn-0 {
+    grid-area: btn-0;
+}
