@@ -2,6 +2,26 @@ let a, b, c, d;
 a=3, b = 2, c = 1, d=4;
 let z = a + b;
 
+
+//------------------ Operaciones Basicas ------------------\\
+
+console.log("Resultado de la suma: "+ z);
+
+z = a - b;
+console.log("resultado de la resta: " + z);
+
+z = a * b;
+console.log("Resultado de la multiplicación: " + z);
+
+z = a/ b;
+console.log("Restultado de la división: " + z);
+
+z = a % b;
+console.log("Operacion modulo: " + z);
+
+z = a** b;
+console.log("El operador exponente : " + z);
+
 //------------------ incremento ------------------\\
 
 //pre-incremento (el operador ++ antes de la variable)

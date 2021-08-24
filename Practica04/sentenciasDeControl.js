@@ -1,5 +1,23 @@
-let numero = 3;
+//--------------- IF ----------------\\
+
+let condicion = true;
+
+if(condicion){
+    //si es verdadera la condición se ejecuta este bloque
+    console.log("Condición verdadera");
+}else{
+    //si es falsa la condición se ejecuta este bloque
+    console.log("Condición falsa");
+}
+
+//swe puede obviar el uso de corchetes si es una sentencia de una sola linea
+if(2>3)
+   console.log("Condición verdadera");
+else
+   console.log("Condición falsa");
+   
 // else if se usa para hacer una corroboración extra  
+let numero = 3;
 
 if( numero == 1){
  console.log("Número uno");
