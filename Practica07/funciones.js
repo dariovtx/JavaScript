@@ -117,9 +117,47 @@ function sumarTodo (){
 }
 
 console.log(resultado);
+/**
+ * *-------------------------  PASO POR VALOR  -------------------------*
+ */
+/**
+ * * Se le denomina a una variable primitiva cuando su valor no posee
+ * * atributos o metodos.
+ */
+//Variable Primitiva
+let x = 10;
 
+function cambiarValor(a){
+    a=20;//La variable a solo existe en la llamada de la funcion y luego se destruye 
+   // return ; no es necesario agregar el retunr porque Las funciones de JS lo tiene de manera implicita
+}
+cambiarValor(x);//10
+//sigue manteniendo el mismo valor ya que el "a" de la funcion no tiene la misma referencia en memoria que el "x" que se le pasa
+//A esta accion se la conoce como paso por valor 
+console.log(x);
 
+/**
+ * *-------------------------  PASO POR REFERENCIA  -------------------------*
+ */
+//Cuando trabajamos con objetos una buena practica es definirlos como constantes
+/**
+ * *En este caso la variable persona ya no es de tipo primitiva y pasa a ser un objeto.
+ * *Este objeto tiene atributos los cuales la variable guarda su referencia en memoria
+ * * esto quiere decir que guarda la direcion de memoria donde se encuentra el nombre Juan 
+ * * y el apellido Perez.
+ */
+const persona = {
+    nombre: 'Juan',
+    apellido: 'Perez'
+}
 
+function cambiarValorObjeto (p1){
+    p1.nombre ='Carlos';//accedemos a la referencia del objeto en memoria y cambiamos su valor
+    p1.apellido = 'Lara';
+}
 
+//Pasamos la referencia del objeto en memoria
+cambiarValorObjeto( persona );
+console.log( persona );
 
 
