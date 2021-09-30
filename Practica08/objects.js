@@ -1,7 +1,7 @@
 /**
  * *Un objeto posee propiedades y metodos
  * *A los objetos se les asigna un espacio de memoria
- * *persona guarda la referencia a donde esta hubicado el objeto
+ * *persona guarda la referencia en memoria donde esta hubicado el objeto
  */
 
 let persona = {
@@ -52,6 +52,100 @@ for( nombrePropiedad in persona ){
     //acceder a lo que contiene
     console.log(persona[nombrePropiedad]);
 }
+
+/**
+ *  * ************ AGREGAR Y ELIMINAR PROPIEDADES  ************ *
+ */
+
+let automovil ={
+    marca: 'ford',
+    modelo: 'fiesta',
+    patente: 'A12',
+    año: '2015',
+   modeloMarca: function(){
+       return this.modelo + ' ' + this.marca;
+   } 
+}
+/* ---- Agregar Propiedad ---- */ 
+automovil.cantidadDePuertas = '4';
+/* ---- Modificamos Propiedad ---- */
+automovil.cantidadDePuertas = '2';
+
+console.log(automovil);
+
+
+/* ---- Elimina la propiedad y su valor asociado ---- */
+delete automovil.cantidadDePuertas;
+
+console.log(automovil);
+
+/**
+ * * Como impromir un objeto *
+ */
+
+//Concatenando cada valor de cada propiedad
+console.log( automovil.marca + ', '+ automovil.modelo );
+
+//for in
+ for (nombrePropiedad in automovil) {
+     console.log( automovil[ nombrePropiedad ] );
+ }
+
+let autoArray = Object.values(automovil);
+console.log(autoArray);
+
+let autoString = JSON.stringify( automovil );
+console.log( autoString );
+
+/**
+ *  * METODO GET EN OBJETOS *
+ */
+
+ let empleado = {
+    //Atributos
+    nombre:'Juan',
+    apellido:'Perez',
+    email: 'jperez@mail.com',
+    edad: 28,
+    //Para indicar que es una propiedad y no una funcion se antepone el get
+    get nombreCompleto(){
+        return this.nombre + ' ' +this.apellido;
+    }
+}
+//nos ahorramos poner () al final
+console.log(empleado.nombreCompleto);
+
+/**
+ *  * METODO SET EN OBJETOS *
+ */
+
+ let cajero = {
+    nombre:'Juan',
+    apellido:'Perez',
+    email: 'jperez@mail.com',
+    idioma:'es',
+    edad: 28,
+    get lang(){
+     return this.idioma.toUpperCase();
+    },
+    //Metodo set se utiliza para modificar el valor de un atributo
+    set lang( lang ){
+        this.idioma = lang.toUpperCase();
+    },
+    get nombreCompleto(){
+        return this.nombre + ' ' +this.apellido;
+    }
+}
+
+console.log( cajero.lang );
+
+//modificamos el valor
+cajero.lang = 'en';
+
+console.log(cajero.lang);
+console.log(cajero.idioma);
+
+
 
 
 
