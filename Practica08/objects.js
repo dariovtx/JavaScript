@@ -1,7 +1,7 @@
 /**
- * *Un objeto posee propiedades y metodos
- * *A los objetos se les asigna un espacio de memoria
- * *persona guarda la referencia en memoria donde esta hubicado el objeto
+ * * Un objeto posee propiedades y metodos
+ * * A los objetos se les asigna un espacio de memoria
+ * * persona guarda la referencia en memoria donde esta hubicado el objeto
  */
 
 let persona = {
@@ -30,7 +30,7 @@ console.log(persona);
 //usamos el metodos se debe colocar parentecis
 console.log(persona.nombreCompleto());
 /**
- * *instanciar OBJETOS  
+ * * instanciar OBJETOS  
  */
 
 let persona2 = new Object();
@@ -145,12 +145,39 @@ cajero.lang = 'en';
 console.log(cajero.lang);
 console.log(cajero.idioma);
 
+/**
+ *  * METODO CONSTRUCTOR EN OBJETOS *
+ *  *  Agregar un metodo al constructor
+ */
+/**
+ * * los constuctores de los objetos por lo general empiezan con mayuscula
+ * * La ventaja de tener el constructor es que nos facilita la reutilizacion de codigo
+ * * si agregamos un metodo no es necesario ir objeto por objeto solo 
+ * * modificamos el constructor y todos los objetos tendran ese mismo metodo 
+ */
+function Persona(nombre,apellido,email){
+    //this nos permite trabajar con las propiedades del objeto en el cual se trabaja en ese momento
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.email = email;
+    this.nombreCompleto = function (){
+        return this.nombre + ' ' + this.apellido;
+    }
+}
+
+let padre = new Persona('Juan','Perez','jPerez@mail.com');
+console.log( padre );
+
+let madre= new Persona('Laura','Quintero', 'lQuintero@mail.com');
+console.log( madre );
 
 
+padre.nombre = 'Carlos';
+console.log(padre);
 
-
-
-
+//acceder a nombre completo
+console.log(padre.nombreCompleto());
+console.log(madre.nombreCompleto());
 
 
 
