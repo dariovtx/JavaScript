@@ -178,6 +178,78 @@ console.log(padre);
 //acceder a nombre completo
 console.log(padre.nombreCompleto());
 console.log(madre.nombreCompleto());
+/**
+ * * Inicializar un objeto 
+ */
+let miObjeto = new Object();
+let miObjeto2 ={};//Esta es la manera mas comun
+
+let miCadena1 = new String();// funcion constructor de tipo string
+let miCadena2 = 'Hola';//Esta forma es la mas normal y recomendable
+
+let miNumero = new Number(1);
+let miNumero2 = 1;
+
+let miBoolean = new Boolean(false);
+let miBoolean2 = false;
+
+let miArreglo1= new Array();
+let miArreglo2 = [];
+
+let miFuncion = new Function();
+let miFuncion2 = function(){};
+
+/**
+ * * Uso de Prototype en JavaScript
+ * 
+ */
+
+ function Persona1(nombre,apellido,email){
+    //this nos permite trabajar con las propiedades del objeto en el cual se trabaja en ese momento
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.email = email;
+    this.nombreCompleto = function (){
+        return this.nombre + ' ' + this.apellido;
+    }
+}
+
+Persona1.prototype.tel='4432356';//Se le da una nueva propiedad a todos los objetos de tipo Persona1
+
+
+let padre1 = new Persona1('Juan','Perez','jPerez@mail.com');
+padre1.tel='1111255';//modificamos el valor
+console.log( padre1.tel );
+
+let madre1= new Persona1('Laura','Quintero', 'lQuintero@mail.com');
+console.log( madre1.tel );
+
+
+
+/**
+ * * Uso del metodo call
+ */
+
+let personaa= {
+    nombre:'Juan',
+    apellido:'Perez',
+    nombreCompleto: function(){
+        return this.nombre +' '+this.apellido;
+    }
+}
+
+let personaa1 ={
+    nombre: 'Carlos',
+    apellido: 'Lara'
+}
+
+console.log(personaa.nombreCompleto());
+//Si tenemos la misma estructura entre dos objetos se puede usar el metodo call
+//Para mandar a llamar un metodo dentro de otro objeto y aplicarlo sobre el otro objeto
+console.log(personaa.nombreCompleto.call(personaa1));
+
+
+
 
 
 
