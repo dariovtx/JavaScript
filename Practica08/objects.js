@@ -248,9 +248,59 @@ console.log(personaa.nombreCompleto());
 //Para mandar a llamar un metodo dentro de otro objeto y aplicarlo sobre el otro objeto
 console.log(personaa.nombreCompleto.call(personaa1));
 
+/**
+ * *Paso de argumento call
+ */
+
+let trabajador = {
+    nombre:'Juan',
+    apellido:'Perez',
+    nombreCompleto: function(titulo,tel){
+        return titulo +': '+ this.nombre +' '+ this.apellido +', '+ tel;
+    }
+}
 
 
+let trabajador1 ={
+    nombre: 'Carlos',
+    apellido: 'Lara'
+}
+
+console.log(trabajador.nombreCompleto('Lic.','5546'));
+
+//Podemos pasar argumentos en nuestras llamadas de la siguiente manera
+console.log(trabajador.nombreCompleto.call(trabajador1, 'Ing', '345684'));
+
+/**
+ * *Metodo Apply 
+ * *Su utilidad es similar a la de call
+ * *existen algunas diferencias por ejemplo cuando se llaman a parametros
+*/
+
+let profesional = {
+    nombre:'Juan',
+    apellido:'Perez',
+    nombreCompleto: function(){
+        return this.nombre +' '+ this.apellido ;
+        //return titulo +': '+ this.nombre +' '+ this.apellido +', '+ tel;
+    },
+    nombreCompleto2: function(titulo, tel){
+        return titulo +': '+ this.nombre +' '+ this.apellido +', '+ tel;
+    }
+
+}
 
 
+let profesional1 ={
+    nombre: 'Carlos',
+    apellido: 'Lara'
+}
 
+console.log(profesional.nombreCompleto());
 
+console.log(profesional.nombreCompleto.apply(profesional1));
+
+console.log(profesional.nombreCompleto2('Lic.','5546'));
+//A diferencia del call es necesario pasar un arreglo y no los parametros directamente
+let arreglo =['Ing', '345684'];
+console.log(profesional.nombreCompleto2.apply(profesional1,arreglo));
